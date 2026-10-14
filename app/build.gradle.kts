@@ -35,6 +35,7 @@ kotlin {
 }
 
 dependencies {
+    implementation(libs.kotlinx.coroutines.core)
     implementation(libs.androidx.core)
     implementation(libs.androidx.activity)
     implementation(platform(libs.compose.bom))

@@ -5,7 +5,10 @@ core = "1.17.0"
 activity = "1.11.0"
 compose = "2025.10.00"
 
+coroutines = "1.10.2"
+
 [libraries]
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 androidx-core = { module = "androidx.core:core-ktx", version.ref = "core" }
 androidx-activity = { module = "androidx.activity:activity-compose", version.ref = "activity" }
 compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose" }
