@@ -25,4 +25,11 @@ jsem zkontroloval pomocí `javap -p -c`. Počty řádků v Javě jsou odhady.
    vrátit seznam nebo značku `COROUTINE_SUSPENDED`. `tableswitch` rozlišuje
    první vstup a pokračování po `delay`.
 
-[Zadani lekce 04](https://www.michalmiklas.cz/vyuka/mobilni-technologie/lekce-04-jazyky.html#cviceni)
+## 4.2 — idiomatický přepis
+
+Předloha má 77 řádků. Spuštění přepisu dalo shodných pět řádků včetně
+desetinných teček a výsledku pro Brno.
+
+[Zadání lekce 04](https://www.michalmiklas.cz/vyuka/mobilni-technologie/lekce-04-jazyky.html#cviceni)
+
+Počet řádků přepisu: 36.
