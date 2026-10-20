@@ -3,4 +3,8 @@
     <string name="welcome">Meteo deník — Jan Borovec</string>
     <string name="welcome_changed">Deník je připravený na první měření.</string>
     <string name="change_welcome">Otevřít deník</string>
+    <string name="title">Moje města</string>
+    <string name="back">Zpět</string>
+    <string name="temperature">%1$.1f °C</string>
+    <string name="missing_temperature">Čeká na měření</string>
 </resources>
