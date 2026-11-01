@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Weather diary</string>
+    <string name="welcome">Weather diary — Jan Borovec</string>
+    <string name="welcome_changed">The diary is ready for its first reading.</string>
+    <string name="change_welcome">Open diary</string>
+    <string name="title">My cities</string>
+    <string name="back">Back</string>
+    <string name="temperature">%1$.1f °C</string>
+    <string name="missing_temperature">Waiting for a reading</string>
+    <string name="city_temperature">%1$s · %2$s</string>
+    <string name="location_title">Location</string>
+    <string name="location_request">Find my location</string>
+    <string name="location_why">Approximate location lets you associate a reading with where you are.</string>
+    <string name="location_off">Location is off. The city list is still available.</string>
+    <string name="location_on">Location is enabled.</string>
+    <string name="location_coords">%1$.3f°, %2$.3f°</string>
+    <string name="settings">Open settings</string>
+    <string name="cancel">Cancel</string>
+    <string name="continue_label">Continue</string>
+    <plurals name="city_count">
+        <item quantity="one">%d record</item>
+        <item quantity="other">%d records</item>
+    </plurals>
+</resources>

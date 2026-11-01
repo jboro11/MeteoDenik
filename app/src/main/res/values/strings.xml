@@ -7,4 +7,19 @@
     <string name="back">Zpět</string>
     <string name="temperature">%1$.1f °C</string>
     <string name="missing_temperature">Čeká na měření</string>
+    <string name="city_temperature">%1$s · %2$s</string>
+    <string name="location_title">Poloha</string>
+    <string name="location_request">Zjistit moji polohu</string>
+    <string name="location_why">Přibližná poloha umožní přiřadit měření k tomu, kde se právě nacházíš.</string>
+    <string name="location_off">Poloha zůstala vypnutá. Seznam měst můžeš používat dál.</string>
+    <string name="location_on">Poloha je povolena.</string>
+    <string name="location_coords">%1$.3f°, %2$.3f°</string>
+    <string name="settings">Otevřít nastavení</string>
+    <string name="cancel">Zrušit</string>
+    <string name="continue_label">Pokračovat</string>
+    <plurals name="city_count">
+        <item quantity="one">%d záznam</item>
+        <item quantity="few">%d záznamy</item>
+        <item quantity="other">%d záznamů</item>
+    </plurals>
 </resources>
