@@ -17,6 +17,14 @@
     <string name="settings">Open settings</string>
     <string name="cancel">Cancel</string>
     <string name="continue_label">Continue</string>
+    <string name="add_city">Add</string>
+    <string name="city_input">City name</string>
+    <string name="remove_city">Remove</string>
+    <string name="duplicate_city">You already follow this city.</string>
+    <string name="empty">There are no cities yet.</string>
+    <string name="student_name">Jan Borovec</string>
+    <string name="student_program">Software Engineering · FAI UTB</string>
+    <string name="reading_count">%1$s — %2$s</string>
     <plurals name="city_count">
         <item quantity="one">%d record</item>
         <item quantity="other">%d records</item>

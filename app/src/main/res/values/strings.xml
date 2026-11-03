@@ -17,6 +17,14 @@
     <string name="settings">Otevřít nastavení</string>
     <string name="cancel">Zrušit</string>
     <string name="continue_label">Pokračovat</string>
+    <string name="add_city">Přidat</string>
+    <string name="city_input">Název města</string>
+    <string name="remove_city">Odebrat</string>
+    <string name="duplicate_city">Tohle město už sleduješ.</string>
+    <string name="empty">Zatím tu nejsou žádná města.</string>
+    <string name="student_name">Jan Borovec</string>
+    <string name="student_program">Softwarové inženýrství · FAI UTB</string>
+    <string name="reading_count">%1$s — %2$s</string>
     <plurals name="city_count">
         <item quantity="one">%d záznam</item>
         <item quantity="few">%d záznamy</item>
