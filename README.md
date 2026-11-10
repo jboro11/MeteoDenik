@@ -1,7 +1,14 @@
 # MeteoDeník
 
-Cvičební aplikace pro Mobilní technologie (AP7MT) na FAI UTB. Začíná jednoduchou
-obrazovkou a navazuje seznamem měst, detailem a údaji o počasí.
+Cvičební aplikace pro Mobilní technologie (AP7MT) na FAI UTB.
+Obsahuje seznam měst s ukázkovými údaji a detail vybraného města. Stav
+obrazovky spravuje ViewModel, pro přechody slouží Navigation Compose.
 
-Projekt otevři jako Gradle projekt v Android Studiu a spusť modul app na emulátoru
-s API 36. Potřebuje Android SDK 36 a JDK 17 nebo 21.
+## Spuštění
+
+Otevři MeteoDenik jako existující Gradle projekt v Android Studiu. Použij
+JDK 17 nebo 21, Android SDK 36 a emulátor API 36. První synchronizace
+potřebuje přístup k závislostem. Sestavení lze spustit příkazem
+`gradlew.bat :app:assembleDebug`.
+
+[Kontrolní seznam](docs/KONTROLA.md)

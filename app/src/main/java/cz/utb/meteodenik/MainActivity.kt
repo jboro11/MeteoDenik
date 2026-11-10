@@ -3,44 +3,54 @@ package cz.utb.meteodenik
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.createSavedStateHandle
+import androidx.lifecycle.viewmodel.initializer
+import androidx.lifecycle.viewmodel.viewModelFactory
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
+import kotlinx.serialization.Serializable
+
+@Serializable private data object Prehled
+@Serializable private data class Detail(val id: Int)
 
 class MainActivity : SledovanaAktivita() {
+    private val model: MestaViewModel by viewModels {
+        viewModelFactory { initializer { MestaViewModel(createSavedStateHandle()) } }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+            val stav by model.stav.collectAsStateWithLifecycle()
+            val navigace = rememberNavController()
             MeteoTheme {
-                var mesta by remember { mutableStateOf(vychoziMesta) }
-                var dalsiId by remember { mutableStateOf(4) }
-                var vstup by rememberSaveable { mutableStateOf("") }
-                var duplicita by remember { mutableStateOf(false) }
                 Scaffold { insets ->
-                    MestaScreen(this@MainActivity, mesta, vstup, duplicita,
-                        zmenaVstupu = { vstup = it; duplicita = false },
-                        pridat = {
-                            val jmeno = vstup.trim()
-                            if (jmeno.isNotEmpty()) {
-                                duplicita = mesta.any { it.nazev.equals(jmeno, ignoreCase = true) }
-                                if (!duplicita) {
-                                    mesta = mesta + Mesto(dalsiId++, jmeno, null, null)
-                                    vstup = ""
-                                }
-                            }
-                        },
-                        odebrat = { id -> mesta = mesta.filterNot { it.id == id } },
-                        detail = { id ->
-                            if (vychoziMesta.any { it.id == id }) startActivity(DetailMestaActivity.intent(this@MainActivity, id))
-                        },
-                        modifier = Modifier.padding(insets)
-                    )
+                    NavHost(navigace, startDestination = Prehled, modifier = Modifier.padding(insets)) {
+                        composable<Prehled> {
+                            MestaScreen(
+                                this@MainActivity, stav.mesta, stav.rozepsane, stav.duplicita,
+                                model::zmenaVstupu, model::pridat, model::odebrat,
+                                detail = { id -> navigace.navigate(Detail(id)) { launchSingleTop = true } }
+                            )
+                        }
+                        composable<Detail> { zaznam ->
+                            val id = zaznam.toRoute<Detail>().id
+                            val mesto = stav.mesta.firstOrNull { it.id == id }
+                            if (mesto == null) Text(stringResource(R.string.empty))
+                            else DetailMesta(mesto, { navigace.popBackStack() })
+                        }
+                    }
                 }
             }
         }

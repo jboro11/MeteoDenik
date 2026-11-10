@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -36,6 +37,10 @@ kotlin {
 
 dependencies {
     implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.lifecycle.compose)
+    implementation(libs.lifecycle.viewmodel)
+    implementation(libs.navigation.compose)
+    implementation(libs.serialization.json)
     implementation(libs.androidx.core)
     implementation(libs.androidx.activity)
     implementation(platform(libs.compose.bom))
